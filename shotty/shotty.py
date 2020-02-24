@@ -6,7 +6,6 @@ ec2 = session.resource('ec2')
 
 def filter_instances(project):
     instances=[]
-   
     if project:
         filters = [{'Name':'tag:Project','Values':[project]}]
         instances = ec2.instances.filter(Filters=filters)
